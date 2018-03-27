@@ -1,5 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0042)http://www.lutanho.net/play/hnefatafl.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <meta name="keywords" content="Hnefatafl">
 
@@ -266,6 +265,7 @@ function GetBestMove(player)
   }  
 }
 
+// returns the "score" of the move, which is calculated as
 function MakeVirtualMove(ii0,jj0,ii1,jj1,cc,ll)
 { var ii, jj, vv=0, kk=0, nn;
   for (ii=0; ii<Size; ii++)
@@ -321,8 +321,7 @@ function MakeVirtualMove(ii0,jj0,ii1,jj1,cc,ll)
     Board[ii1][jj1+1][ll]=-1;
   if ((GetBoard(ii1,jj1-1,ll)==1-cc)&&((sign(GetBoard(ii1,jj1-2,ll))==cc)||IsHostile(ii1,jj1-2)))
     Board[ii1][jj1-1][ll]=-1;
-//The computer strength can probably be improved 
-//by carefully adapting the parameters.
+//The computer strength can be adjusted by changing the parameters
   vv=0;
   ii=King[0][ll];
   kk=0;
